@@ -1,0 +1,97 @@
+@font-face {
+  font-family: "hangman";
+  src: url("../Fonts/hangman.otf") format("otf");
+}
+body {
+  font-family: "hangman";
+}
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.container {
+  width: 80%;
+  margin: 0 auto;
+  gap: 5em;
+  padding-block: 2em;
+}
+.hang-head {
+  min-width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+.hang-head img {
+  width: 5rem;
+  border-radius: 50%;
+  margin-bottom: 1.5em;
+}
+.hang-words {
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  grid-template-columns: repeat(10, auto);
+  gap: 1em;
+  grid-auto-flow: row;
+}
+.hang-word__btn,
+.reset {
+  border-radius: 50%;
+  margin: 0 auto;
+  background-color: #74b9ff;
+  color: white;
+  padding: 1.5em;
+  line-height: 0.4em;
+}
+.hang-word__btn:hover,
+.reset:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+.hang-body {
+  min-width: 50%;
+  text-align: center;
+  gap: 4em;
+}
+.hang-body--text {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  font-size: 1.8rem;
+  letter-spacing: 1rem;
+  font-weight: 700;
+}
+.gOver,
+.winner {
+  height: 5rem;
+  position: relative;
+  font-size: 2rem;
+  letter-spacing: 1rem;
+  font-weight: 700;
+  display: none;
+}
+:is(.winner,.gOver) img {
+  max-width: 7rem;
+}
+
+.reset {
+  border-radius: 1em;
+  background-color: crimson;
+}
+.anim span {
+  animation: word 3s infinite;
+}
+.anim {
+  display: flex;
+  color: darkorchid;
+  justify-content: center;
+  align-items: center;
+}
+@keyframes word {
+  from {
+    letter-spacing: 5rem;
+  }
+  to {
+    letter-spacing: 1rem;
+  }
+}
