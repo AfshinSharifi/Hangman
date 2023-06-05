@@ -36,7 +36,7 @@ hangBtn.forEach((item) =>
 function chooseWrd(item) {
   if (some) {
     item.target.style.backgroundColor = "gray";
-    let letter = item.toLowerCase();
+    let letter = item.target.innerText.toLowerCase();
     clicked.indexOf(letter) === -1 ? clicked.push(letter) : null;
     if (randChoose.indexOf(letter) >= 0) {
       getWrd();
@@ -50,7 +50,6 @@ function chooseWrd(item) {
 }
 
 function getWrd() {
-  console.log(randChoose);
   result = randChoose
     .split("")
     .map((item) => (clicked.indexOf(item) >= 0 ? item : "_"))
